@@ -1,6 +1,9 @@
 <script lang="ts" setup>
-import {NConfigProvider} from 'naive-ui';
+import { ref } from 'vue';
+import { NConfigProvider } from 'naive-ui';
 import HeaderMenu from './components/HeaderMenu.component.vue';
+
+const deck = ref([]); // Assurez-vous que cette donnée est correctement remplie
 </script>
 
 <template>
@@ -12,7 +15,7 @@ import HeaderMenu from './components/HeaderMenu.component.vue';
       <n-layout-content class="content">
         <n-space justify="center">
           <n-message-provider>
-            <RouterView/>
+            <RouterView :deck="deck"/>
           </n-message-provider>
         </n-space>
       </n-layout-content>
